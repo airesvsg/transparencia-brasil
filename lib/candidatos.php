@@ -43,24 +43,4 @@
 			return $this;
 		}
 
-		public function bens($id=null){
-			$this->setArea('bens');
-			return $this;
-		}
-
-		public function doadores($id=null){
-			$this->setArea('doadores');
-			return $this;
-		}
-
-		public function candidaturas($id=null){
-			$this->setArea('candidaturas');
-			return $this;
-		}
-
-		public function estatisticas($id=null){
-			$this->setArea('estatisticas');
-			return $this;
-		}
-
 	}

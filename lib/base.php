@@ -25,6 +25,14 @@
 			}
 		}
 
+		public function __get($valor){
+			if(isset($this->areas_permitidas) && is_array($this->areas_permitidas) && in_array($valor, $this->areas_permitidas)){
+				return $this->setArea($valor);
+			}elseif(isset($this->{$valor})){
+				return $this->{$valor};
+			}
+		}
+
 		public function setId($id){
 			$this->id = is_numeric($id) && $id ? $id : null;
 			return $this;

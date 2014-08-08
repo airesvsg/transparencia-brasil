@@ -41,10 +41,5 @@
 			$this->casa(casas::SENADO_FEDERAL);
 			return $this;
 		}
-		
-		public function bens(){
-			$this->setArea('bens');
-			return $this;
-		}
 
 	}

@@ -52,7 +52,7 @@
 		var_dump($excelencias->dados());
 	}
 
-	$excelenciaBens = $transparenciaBrasil->excelencias->bens()->listar('id_excelencia');
+	$excelenciaBens = $transparenciaBrasil->excelencias->bens->listar('id_excelencia');
 	
 	if($excelenciaBens->erro()){
 		echo $excelenciaBens->mensagem();
@@ -68,7 +68,7 @@
 		var_dump($candidatos->dados());
 	}
 
-	$candidatosBens = $transparenciaBrasil->candidatos->bens()->listar('id_candidato');
+	$candidatosBens = $transparenciaBrasil->candidatos->bens->listar('id_candidato');
 	
 	if($candidatosBens->erro()){
 		echo $candidatosBens->mensagem();
@@ -76,7 +76,7 @@
 		var_dump($candidatosBens->dados());
 	}
 
-	$candidatosDoadores = $transparenciaBrasil->candidatos->doadores()->listar('id_candidato');
+	$candidatosDoadores = $transparenciaBrasil->candidatos->doadores->listar('id_candidato');
 	
 	if($candidatosDoadores->erro()){
 		echo $candidatosDoadores->mensagem();
@@ -84,7 +84,7 @@
 		var_dump($candidatosDoadores->dados());
 	}
 
-	$candidatosCandidaturas = $transparenciaBrasil->candidatos->candidaturas()->listar('id_candidato');
+	$candidatosCandidaturas = $transparenciaBrasil->candidatos->candidaturas->listar('id_candidato');
 	
 	if($candidatosCandidaturas->erro()){
 		echo $candidatosCandidaturas->mensagem();
@@ -92,7 +92,7 @@
 		var_dump($candidatosCandidaturas->dados());
 	}
 
-	$candidatosEstatisticas = $transparenciaBrasil->candidatos->estatisticas()->listar('id_candidato');
+	$candidatosEstatisticas = $transparenciaBrasil->candidatos->estatisticas->listar('id_candidato');
 	
 	if($candidatosEstatisticas->erro()){
 		echo $candidatosEstatisticas->mensagem();
