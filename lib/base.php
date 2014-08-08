@@ -33,7 +33,7 @@
 			}
 		}
 
-		public function setId($id){
+		protected function setId($id){
 			$this->id = is_numeric($id) && $id ? $id : null;
 			return $this;
 		}
@@ -42,12 +42,12 @@
 			return $this->id;
 		}
 
-		public function setUrlBase($path){
+		protected function setUrlBase($path){
 			$this->urlBase = transparenciaBrasil::getUrlBase().trim($path, '/').'/';
 			return $this;
 		}
 
-		public function setArea($area){
+		protected function setArea($area){
 			if(isset($this->areas_permitidas) && is_array($this->areas_permitidas) && in_array($area, $this->areas_permitidas)){
 				$this->area = $area;
 			}
@@ -60,7 +60,7 @@
 			return $this->area;
 		}
 
-		public function setPaginacao($limit=null, $offset=null){
+		protected function setPaginacao($limit=null, $offset=null){
 			if(is_numeric($limit) && is_numeric($offset)){
 				$this->setParametros(
 					array(
@@ -87,11 +87,9 @@
 			return is_array($this->parametros) && count($this->parametros)>0 ? $this->parametros : null;
 		}
 
-
 		public function listar($id=null){
 			if($id) $this->setId($id);
 			return $this->cliente->receber($this->urlBase.$this->getId().$this->getArea(), $this->getParametros());
 		}
-
 
 	}
