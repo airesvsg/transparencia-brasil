@@ -12,7 +12,7 @@
         
         private $resposta;
 
-        private static $STATUS_ERRO = array(
+        private static $STATUS = array(
             200 => 'Sucesso!',
             400 => 'A requisição possui parametro(s) inválido(s)',
             401 => 'O token de acesso não foi informado ou não possui acesso as APIs.',
@@ -33,8 +33,8 @@
             if(isset($dados->message)){
                 $this->resposta->mensagem = $dados->message;
             }
-            if(!isset($dados->message) && array_key_exists($codigoHttp, self::$STATUS_ERRO)){
-                $this->resposta->mensagem = self::$STATUS_ERRO[$codigoHttp];
+            if(!isset($dados->message) && array_key_exists($codigoHttp, self::$STATUS)){
+                $this->resposta->mensagem = self::$STATUS[$codigoHttp];
             }
         }
 
